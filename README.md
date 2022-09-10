@@ -1,2 +1,1 @@
-# caco
 linux distro
