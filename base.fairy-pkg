@@ -1,0 +1,33 @@
+# The pkg manager is declared with a very simple syntax and parsed using regex.
+
+
+awk -e "/(?<=description:).*/gm" test.txt
+
+
+# description: {([^}]*)}
+# ^ Match everything at the paranthesis at description.
+# I want to first have a passover that matches each "metadatum".
+# So, just description and the paranthesis, then it feeds into the regex on line 4.
+
+
+# post-build
+# pre-build
+# build
+# These will all be practically embedded shell scripts.
+# Example:
+
+pre-build: {
+    get the stuff
+}
+
+build: {
+    build the stuff
+}
+
+post-build: {
+    clean up the stuff
+}
+
+
+
+
