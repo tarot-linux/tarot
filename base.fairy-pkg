@@ -1,14 +1,22 @@
 # The pkg manager is declared with a very simple syntax and parsed using regex.
 
-
-awk -e "/(?<=description:).*/gm" test.txt
-
-
 # description: {([^}]*)}
 # ^ Match everything at the paranthesis at description.
 # I want to first have a passover that matches each "metadatum".
 # So, just description and the paranthesis, then it feeds into the regex on line 4.
 
+title: { An example title. }
+author: { Author. }
+dependencies: { x y z }
+
+# Haven't decided if dependecies will look like the above or
+
+dependencies: { x, y, z}
+
+
+description: {
+    A package.
+}
 
 # post-build
 # pre-build
