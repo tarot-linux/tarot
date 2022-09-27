@@ -1,42 +1,72 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <curl/curl.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+// TO DO
+// everything
+//
+//
+//
 
 
-void readPkg(char* path)
+
+// reads a packages contents and prints them out.
+void readPkg(char *path)
 {
-	FILE * fp;
+	FILE *fp;
 	int c;
 
 	fp = fopen(path, "r");
-	while(1) {
-      		c = fgetc(fp);
-      		if( feof(fp) ) { 
-         		break ;
-      		}
-      		printf("%c", c);
-   	}
-	fclose(fp);
+	if (fp) {
+		while(1) {
+			c = fgetc(fp);
+			if( feof(fp) ) { 
+				break ;
+			}
+			printf("%c", c);
+		}
+		fclose(fp);
+	} else {
+		printf("Invalid file location.\n");
+	}
 }
 
 void getPkg() 
 {
+	// There should be a build directory in /var/tmp.	
+}
+
+int fetchPkg()
+{
+	// Implent curl to read the raw git content of tarot/tarot-pkgs.
 	
-}
-
-void fetchPkgInfo()
-{
-
-}
-
-
-int fetchPkgInfo-GIT() 
-{
 	return 0;
 }
+
+void upgradeSys()
+{
+
+}
+
+
+void updatePkg() 
+{
+
+}
+
+void buildPkg() {
+	fork();
+	printf("Chicken wing");
+}
+
 
 int main(int argc, char *argv[])
 {
 
-	readPkg("vim/info");
+	system("./tarot-pkgs/vim/build");
+
 	return 0;
 }
