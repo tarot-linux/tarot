@@ -130,6 +130,7 @@ char *fetchDeps(char *pkgName)
 	return gitlink;
 }
 
+// this series of fetch functions should just have an OPT to cut down on redudancy..
 
 int downloadBuild(char *pkgName) 
 {
